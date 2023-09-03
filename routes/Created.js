@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
     const events = await Event.find({ _id: { $in: eventIds } });
 
     // Render the 'created.ejs' template and pass the events to it
-    res.render("created", { events });
+    res.render("Created", { events });
   } catch (error) {
     // Handle any errors that occur
     console.error("Error fetching created events:", error);
