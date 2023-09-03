@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+*{
+    margin: 0;
+}
+body {
+    margin: 0;
+        background: linear-gradient(to bottom, #3498db, #ffffff);
+            /* Adjust the colors as needed */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+}
+
+.hero,
+.content {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.hero {
+    /* background-color: #78C1F3; */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+    /* background-color: whitesmoke; */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 1000ms;
+
+}
+
+.card-text {
+    position: absolute;
+    top: 50%;
+    /* Adjust as needed */
+    left: 50%;
+    font-family: 'Montserrat', sans-serif;
+    /* Adjust as needed */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.198);
+    z-index: 99;
+    padding: 20px;
+    width: 80%;
+    /* Adjust the width as needed */
+}
+
+.card-text h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.card-text p {
+    margin: 10px 0 0;
+}
+
+body:has(.card[data-color="blue"]:hover) {
+    background-color: rgb(var(--blue-rgb) / 25%);
+}
+
+body:has(.card[data-color="green"]:hover) {
+    background-color: rgb(var(--green-rgb) / 25%);
+}
+
+body:has(.card[data-color="brown"]:hover) {
+    background-color: rgb(var(--brown-rgb) / 25%);
+}
+
+#cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    right: 1000;
+}
+
+.card {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: scale 100ms;
+    margin: 0 1rem;
+    /* Adjusted margin */
+}
+
+.card .card-front-image {
+    position: relative;
+    z-index: 2;
+}
+
+.card .card-image {
+    height: 50ch;
+    /* Adjusted image size */
+    border-radius: clamp(0.5rem, 0.75vw, 2rem);
+}
+
+.card-faders {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1500ms;
+    pointer-events: none;
+}
+
+.card:hover .card-faders {
+    opacity: 1;
+}
+
+.card:active {
+    scale: 0.98;
+}
+
+.card-fader {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.card-fader:nth-child(odd) {
+    animation: fade-left 3s linear infinite;
+}
+
+.card-fader:nth-child(even) {
+    animation: fade-right 3s linear infinite;
+}
+
+.card-fader:is(:nth-child(3), :nth-child(4)) {
+    animation-delay: 750ms;
+}
+
+.card-fader:is(:nth-child(5), :nth-child(6)) {
+    animation-delay: 1500ms;
+}
+
+.card-fader:is(:nth-child(7), :nth-child(8)) {
+    animation-delay: 2250ms;
+}
+
+@media(max-width: 1200px) {
+    body {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    #cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        padding: 4rem;
+    }
+
+    .card .card-image {
+        width: 400px;
+    }
+}
+
+@media(max-width: 600px) {
+    #cards {
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .card .card-image {
+        width: 100%;
+    }
+}
+
+@keyframes fade-left {
+    from {
+        scale: 1;
+        translate: 0%;
+        opacity: 1;
+    }
+
+    to {
+        scale: 0.8;
+        translate: -30%;
+        opacity: 0;
+    }
+}
+
+@keyframes fade-right {
+    from {
+        scale: 1;
+        translate: 0%;
+        opacity: 1;
+    }
+
+    to {
+        scale: 0.8;
+        translate: 30%;
+        opacity: 0;
+    }
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
+    font-weight: 200;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+}
+
+/* }
+.title .letter {
+    display: inline-block;
+    line-height: 1em;
+} */

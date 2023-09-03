@@ -1,0 +1,61 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, #3498db, #ffffff);
+        /* Adjust the colors as needed */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Form Styles */
+form {
+    display: grid;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
